@@ -1,0 +1,2306 @@
+{
+	"info": {
+		"_postman_id": "6879bc51-ead8-44c2-b532-652044e4e6a0",
+		"name": "Recipes API",
+		"description": "Το παρακάτω **API** δημιουργήθηκε στα πλαίσια του ΠΜΣ Μηχανική Λογισμικού  \nγια Διαδικτυακές & Φορητές Εφαρμογές από τον Μιχαήλ Άγγελο Τσιαντάκη για τους σκοπούς του Project με το Flutter.\n\nΔιατείθεται στην διεύθυνση [https://recipesapi.digitalsystems.gr/v1/api/](https://recipesapi.digitalsystems.gr/v1/api/) και μπορεί να χρησιμοποιηθεί στο Flutter εύκολα με την βιβλιοθήκη της Pocketbase εδώ: [https://pub.dev/packages/pocketbase](https://pub.dev/packages/pocketbase)\n\nΚαθώς το API βασίζεται στο Pocketbase ([https://pocketbase.io/docs/)](https://pocketbase.io/docs/) πρέπει να κοιτάξετε το documentation εδώ [https://pocketbase.io/docs/api-records/](https://pocketbase.io/docs/api-records/) για επιπλέον πεδιά που μπορούν να συμπληρωθούν και δίνουν επιπλέον δυνατότητες όπως ταξινόμηση βάση κάποιου πεδίου/ων ή δυνατότητα φιλτραρίσματος ή ακόμα και relation expansion (να επιστρέφει αυτούσα και τις σχέσεις με ξένο κλειδί για παράδειγμα όλα τα βήματα μιας συνταγής αντί για μόνο τα id τους).\n\nΓια το upload/view των αρχείων εικόνων στις συνταγές και των βημάτων τους πάλι μπορείτε να δείτε το σχετικό documentation εδώ: [https://pocketbase.io/docs/files-handling/](https://pocketbase.io/docs/files-handling/)\n\nΤέλος για οποιαδήποτε απορία που έχετε στείλτε μήνυμα email / viber.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43733390",
+		"_collection_link": "https://michailangelos.postman.co/workspace/Michail-Angelos's-Workspace~c7511377-f1ed-42ff-8325-85b031e905aa/collection/43733390-6879bc51-ead8-44c2-b532-652044e4e6a0?action=share&source=collection_link&creator=43733390"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "List all categories",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/categories/records",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"categories",
+								"records"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List all categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/categories/records",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"categories",
+										"records"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "255"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Apr 2025 11:59:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"collectionId\": \"pbc_3292755704\",\n            \"collectionName\": \"categories\",\n            \"created\": \"2025-04-07 11:58:51.472Z\",\n            \"id\": \"v8857j09yvmzxzf\",\n            \"name\": \"Μαγειρευτά\",\n            \"updated\": \"2025-04-07 11:58:51.472Z\"\n        }\n    ],\n    \"page\": 1,\n    \"perPage\": 30,\n    \"totalItems\": 1,\n    \"totalPages\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "View category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/categories/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"categories",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "v8857j09yvmzxzf"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View category",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/categories/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"categories",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "v8857j09yvmzxzf"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "191"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Apr 2025 11:59:03 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"collectionId\": \"pbc_3292755704\",\n    \"collectionName\": \"categories\",\n    \"created\": \"2025-04-07 11:58:51.472Z\",\n    \"id\": \"v8857j09yvmzxzf\",\n    \"name\": \"Μαγειρευτά\",\n    \"updated\": \"2025-04-07 11:58:51.472Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"description": "Cannot be blank",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/collections/categories/records",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"categories",
+								"records"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Ψητά",
+											"description": "Το όνομα της κατηγορίας",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/collections/categories/records",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"categories",
+										"records"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "179"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Apr 2025 12:09:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"collectionId\": \"pbc_3292755704\",\n    \"collectionName\": \"categories\",\n    \"created\": \"2025-04-07 12:09:35.675Z\",\n    \"id\": \"js586lg71x8ru19\",\n    \"name\": \"Ψητά\",\n    \"updated\": \"2025-04-07 12:09:35.675Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Ψητά στο φούρνο",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/collections/categories/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"categories",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update category",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Ψητά στο φούρνο",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/collections/categories/records/js586lg71x8ru19",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"categories",
+										"records",
+										"js586lg71x8ru19"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "199"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Apr 2025 12:11:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"collectionId\": \"pbc_3292755704\",\n    \"collectionName\": \"categories\",\n    \"created\": \"2025-04-07 12:09:35.675Z\",\n    \"id\": \"js586lg71x8ru19\",\n    \"name\": \"Ψητά στο φούρνο\",\n    \"updated\": \"2025-04-07 12:11:24.720Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete category",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/categories/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"categories",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete category",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/categories/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"categories",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "js586lg71x8ru19"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Apr 2025 12:12:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ingredients",
+			"item": [
+				{
+					"name": "List all ingredients",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/ingredients/records",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"ingredients",
+								"records"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List all ingredients",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/ingredients/records",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"ingredients",
+										"records"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "284"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Apr 2025 12:16:35 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"collectionId\": \"pbc_3146854971\",\n            \"collectionName\": \"ingredients\",\n            \"created\": \"2025-04-07 12:15:44.073Z\",\n            \"id\": \"al1q2l0478467uy\",\n            \"name\": \"Ντομάτες λιαστές\",\n            \"quantity\": \"2kg\",\n            \"updated\": \"2025-04-07 12:16:21.621Z\"\n        }\n    ],\n    \"page\": 1,\n    \"perPage\": 30,\n    \"totalItems\": 1,\n    \"totalPages\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "View ingredient",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/ingredients/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"ingredients",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View ingredient",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/ingredients/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"ingredients",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "al1q2l0478467uy"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "220"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Apr 2025 12:18:38 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"collectionId\": \"pbc_3146854971\",\n    \"collectionName\": \"ingredients\",\n    \"created\": \"2025-04-07 12:15:44.073Z\",\n    \"id\": \"al1q2l0478467uy\",\n    \"name\": \"Ντομάτες λιαστές\",\n    \"quantity\": \"2kg\",\n    \"updated\": \"2025-04-07 12:16:21.621Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create ingredient",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "quantity",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/collections/ingredients/records",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"ingredients",
+								"records"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create ingredient",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Πατάτες",
+											"type": "text"
+										},
+										{
+											"key": "quantity",
+											"value": "23gr",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/collections/ingredients/records",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"ingredients",
+										"records"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "204"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Apr 2025 12:20:55 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"collectionId\": \"pbc_3146854971\",\n    \"collectionName\": \"ingredients\",\n    \"created\": \"2025-04-07 12:20:55.173Z\",\n    \"id\": \"5192120k31f48t3\",\n    \"name\": \"Πατάτες\",\n    \"quantity\": \"23gr\",\n    \"updated\": \"2025-04-07 12:20:55.173Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update ingredient",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/collections/ingredients/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"ingredients",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update ingredient",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Φράουλες",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/collections/ingredients/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"ingredients",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5192120k31f48t3"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "206"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Apr 2025 12:23:00 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"collectionId\": \"pbc_3146854971\",\n    \"collectionName\": \"ingredients\",\n    \"created\": \"2025-04-07 12:20:55.173Z\",\n    \"id\": \"5192120k31f48t3\",\n    \"name\": \"Φράουλες\",\n    \"quantity\": \"23gr\",\n    \"updated\": \"2025-04-07 12:23:00.721Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete ingredient",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/ingredients/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"ingredients",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete ingredient",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/ingredients/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"ingredients",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "5192120k31f48t3"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 07 Apr 2025 12:24:27 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "steps",
+			"item": [
+				{
+					"name": "List all steps",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/steps/records",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"steps",
+								"records"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List all steps",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/steps/records",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"steps",
+										"records"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "811"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Apr 2025 05:12:53 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"collectionId\": \"pbc_4284789913\",\n            \"collectionName\": \"steps\",\n            \"created\": \"2025-04-08 05:09:57.127Z\",\n            \"description\": \"Προθερμαίνουμε τον φούρνο για 20 λεπτά\",\n            \"duration\": 5,\n            \"id\": \"s794u181t291c81\",\n            \"ingredients\": [],\n            \"name\": \"Προθέρμανση φούρνου\",\n            \"order\": 1,\n            \"photos\": [\n                \"preheat_3skuzzclfn.jpg\"\n            ],\n            \"updated\": \"2025-04-08 05:12:49.121Z\"\n        },\n        {\n            \"collectionId\": \"pbc_4284789913\",\n            \"collectionName\": \"steps\",\n            \"created\": \"2025-04-08 05:11:29.241Z\",\n            \"description\": \"Για να ψηθεί το κρέας καλά\",\n            \"duration\": 6,\n            \"id\": \"y84l4683xo72171\",\n            \"ingredients\": [\n                \"4jxi4559gmi3kxy\"\n            ],\n            \"name\": \"Ρύθμιση φούρνου στους 200 βαθμούς\",\n            \"order\": 2,\n            \"photos\": [\n                \"setoven_ey6cjnlirg.jpg\"\n            ],\n            \"updated\": \"2025-04-08 05:12:44.251Z\"\n        }\n    ],\n    \"page\": 1,\n    \"perPage\": 30,\n    \"totalItems\": 2,\n    \"totalPages\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "View step",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/steps/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"steps",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View step",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/steps/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"steps",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "y84l4683xo72171"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "382"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Apr 2025 05:15:32 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"collectionId\": \"pbc_4284789913\",\n    \"collectionName\": \"steps\",\n    \"created\": \"2025-04-08 05:11:29.241Z\",\n    \"description\": \"Για να ψηθεί το κρέας καλά\",\n    \"duration\": 6,\n    \"id\": \"y84l4683xo72171\",\n    \"ingredients\": [\n        \"4jxi4559gmi3kxy\"\n    ],\n    \"name\": \"Ρύθμιση φούρνου στους 200 βαθμούς\",\n    \"order\": 2,\n    \"photos\": [\n        \"setoven_ey6cjnlirg.jpg\"\n    ],\n    \"updated\": \"2025-04-08 05:12:44.251Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create step",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "ingredients",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "duration",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/collections/steps/records",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"steps",
+								"records"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create step",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Ψήσιμο του κρέατος",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Ψήνουμε το κρέας στον φούρνο στους 200 βαθμούς για 30 λεπτά.",
+											"type": "text"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": []
+										},
+										{
+											"key": "duration",
+											"value": "30",
+											"type": "text"
+										},
+										{
+											"key": "order",
+											"value": "3",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/collections/steps/records",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"steps",
+										"records"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "374"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Apr 2025 05:20:07 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"collectionId\": \"pbc_4284789913\",\n    \"collectionName\": \"steps\",\n    \"created\": \"2025-04-08 05:20:07.342Z\",\n    \"description\": \"Ψήνουμε το κρέας στον φούρνο στους 200 βαθμούς για 30 λεπτά.\",\n    \"duration\": 30,\n    \"id\": \"n576622e338ve5i\",\n    \"ingredients\": [],\n    \"name\": \"Ψήσιμο του κρέατος\",\n    \"order\": 3,\n    \"photos\": [],\n    \"updated\": \"2025-04-08 05:20:07.342Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update step",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "ingredients",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "duration",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/collections/steps/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"steps",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update step",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "description",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										},
+										{
+											"key": "ingredients",
+											"value": "4jxi4559gmi3kxy",
+											"type": "text"
+										},
+										{
+											"key": "duration",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "order",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/collections/steps/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"steps",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "n576622e338ve5i"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "391"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Apr 2025 05:22:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"collectionId\": \"pbc_4284789913\",\n    \"collectionName\": \"steps\",\n    \"created\": \"2025-04-08 05:20:07.342Z\",\n    \"description\": \"Ψήνουμε το κρέας στον φούρνο στους 200 βαθμούς για 30 λεπτά.\",\n    \"duration\": 30,\n    \"id\": \"n576622e338ve5i\",\n    \"ingredients\": [\n        \"4jxi4559gmi3kxy\"\n    ],\n    \"name\": \"Ψήσιμο του κρέατος\",\n    \"order\": 3,\n    \"photos\": [],\n    \"updated\": \"2025-04-08 05:22:28.802Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete step",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/steps/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"steps",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete step",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/steps/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"steps",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "n576622e338ve5i"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Apr 2025 05:26:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "recipes",
+			"item": [
+				{
+					"name": "List all recipes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/recipes/records",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"recipes",
+								"records"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List all recipes",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/recipes/records",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"recipes",
+										"records"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "378"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Apr 2025 05:31:46 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"items\": [\n        {\n            \"category\": \"v8857j09yvmzxzf\",\n            \"collectionId\": \"pbc_842702175\",\n            \"collectionName\": \"recipes\",\n            \"created\": \"2025-04-08 05:31:41.201Z\",\n            \"difficulty\": \"medium\",\n            \"id\": \"02y5b35t2fz5jrk\",\n            \"name\": \"Κοτόπουλο στο φούρνο\",\n            \"photos\": [],\n            \"steps\": [\n                \"y84l4683xo72171\",\n                \"s794u181t291c81\"\n            ],\n            \"updated\": \"2025-04-08 05:31:41.201Z\"\n        }\n    ],\n    \"page\": 1,\n    \"perPage\": 30,\n    \"totalItems\": 1,\n    \"totalPages\": 1\n}"
+						}
+					]
+				},
+				{
+					"name": "View recipes",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/recipes/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"recipes",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "View recipe",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/recipes/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"recipes",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "02y5b35t2fz5jrk"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "314"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Apr 2025 05:32:22 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"category\": \"v8857j09yvmzxzf\",\n    \"collectionId\": \"pbc_842702175\",\n    \"collectionName\": \"recipes\",\n    \"created\": \"2025-04-08 05:31:41.201Z\",\n    \"difficulty\": \"medium\",\n    \"id\": \"02y5b35t2fz5jrk\",\n    \"name\": \"Κοτόπουλο στο φούρνο\",\n    \"photos\": [],\n    \"steps\": [\n        \"y84l4683xo72171\",\n        \"s794u181t291c81\"\n    ],\n    \"updated\": \"2025-04-08 05:31:41.201Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create recipe",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "difficulty",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "ingredients",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "steps",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/collections/recipes/records",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"recipes",
+								"records"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create recipe",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "Ψωμί με ταχίνι",
+											"type": "text"
+										},
+										{
+											"key": "difficulty",
+											"value": "easy",
+											"type": "text"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										},
+										{
+											"key": "ingredients",
+											"value": "xnb44bx7a7cwh29",
+											"type": "text"
+										},
+										{
+											"key": "category",
+											"value": "y271z175cd1n37m",
+											"type": "text"
+										},
+										{
+											"key": "steps",
+											"value": "s794u181t291c81",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/collections/recipes/records",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"recipes",
+										"records"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "282"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Apr 2025 05:35:24 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"category\": \"y271z175cd1n37m\",\n    \"collectionId\": \"pbc_842702175\",\n    \"collectionName\": \"recipes\",\n    \"created\": \"2025-04-08 05:35:24.544Z\",\n    \"difficulty\": \"easy\",\n    \"id\": \"gq5ctir69928ad3\",\n    \"name\": \"Ψωμί με ταχίνι\",\n    \"photos\": [],\n    \"steps\": [\n        \"s794u181t291c81\"\n    ],\n    \"updated\": \"2025-04-08 05:35:24.544Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update recipe",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "difficulty",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "photos",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								},
+								{
+									"key": "category",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "steps",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/collections/recipes/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"recipes",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update reipe",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "difficulty",
+											"value": "medium",
+											"type": "text"
+										},
+										{
+											"key": "photos",
+											"type": "file",
+											"src": [],
+											"disabled": true
+										},
+										{
+											"key": "category",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "steps",
+											"value": "",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/api/collections/recipes/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"recipes",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "02y5b35t2fz5jrk"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Content-Length",
+									"value": "314"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Apr 2025 05:37:47 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"category\": \"v8857j09yvmzxzf\",\n    \"collectionId\": \"pbc_842702175\",\n    \"collectionName\": \"recipes\",\n    \"created\": \"2025-04-08 05:31:41.201Z\",\n    \"difficulty\": \"medium\",\n    \"id\": \"02y5b35t2fz5jrk\",\n    \"name\": \"Κοτόπουλο στο φούρνο\",\n    \"photos\": [],\n    \"steps\": [\n        \"y84l4683xo72171\",\n        \"s794u181t291c81\"\n    ],\n    \"updated\": \"2025-04-08 05:37:47.624Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete recipe",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/collections/recipes/records/:id",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"collections",
+								"recipes",
+								"records",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete recipe",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/api/collections/recipes/records/:id",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"api",
+										"collections",
+										"recipes",
+										"records",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "gq5ctir69928ad3"
+										}
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Alt-Svc",
+									"value": "h3=\":443\"; ma=2592000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 08 Apr 2025 05:39:15 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Caddy"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "SAMEORIGIN"
+								},
+								{
+									"key": "X-Xss-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
